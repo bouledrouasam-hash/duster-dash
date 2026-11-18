@@ -52,14 +52,10 @@
   var lastOpener = null;
 
   function startDownload() {
-    if (!C.DOWNLOAD_URL) return;
-    var a = document.createElement("a");
-    a.href = C.DOWNLOAD_URL;
-    a.setAttribute("download", "");
-    a.rel = "noopener";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    var dl = $("#dl-link");
+    // Click the real button already in the dialog (href set by reveal()).
+    // A temporary <a> that is removed immediately can cancel the download.
+    if (dl && C.DOWNLOAD_URL && !dl.hasAttribute("aria-disabled")) dl.click();
   }
 
   function reveal(name, autoDl) {
