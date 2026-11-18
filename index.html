@@ -182,6 +182,7 @@
       <div class="card"><span class="bar"></span><h3>Trip computer</h3><p>Fuel used, average consumption and average speed.</p></div>
       <div class="card"><span class="bar"></span><h3>Shortcut buttons</h3><p>Music, YouTube, Home, School and more, one tap from the dash.</p></div>
       <div class="card"><span class="bar"></span><h3>Light on RAM</h3><p>Built for 1 GB head units.</p></div>
+      <div class="card"><span class="bar"></span><h3>Service consoles</h3><p>A license also unlocks OBD and CAN service consoles, protected by a PIN.</p></div>
     </div>
   </div>
 </section>
@@ -279,10 +280,10 @@
     <h2>Install it, try it free, then keep it</h2>
     <span class="rule"></span>
     <ol class="steps">
-      <li><b>Get the download.</b> Enter your name and email to unlock the Duster Dash APK (and the Duster Companion APK for your phone).</li>
+      <li><b>Get the download.</b> Enter your name and email to unlock the Duster Dash APK (and the Duster Companion APK for your phone). Phone / WhatsApp and your car details are optional.</li>
       <li><b>Install on the head unit.</b> Open the APK on the head unit (download it there, or copy it over by USB). If Android asks, allow installs from this source.</li>
       <li><b>Try everything free for <span data-trial>14</span> days.</b> <span class="needs-feedback">Tell us <a href="#" data-feedback>what works and what doesn't</a>.</span></li>
-      <li><b>Keep it for <span data-price>$9.99</span>.</b> Buy a license code to keep using it after the trial.</li>
+      <li><b>Keep it for <span data-price>$9.99</span>.</b> Buy a license code to keep using it after the trial. A license also unlocks OBD/CAN service consoles (PIN-protected).</li>
     </ol>
     <div class="cta-row" style="margin-top:28px">
       <a class="btn btn-primary" href="#" data-open-form="download">Get the free download</a>
@@ -298,9 +299,9 @@
     <h2>Questions</h2>
     <span class="rule"></span>
     <details><summary>What do I need to use Duster Dash?</summary><p>A Renault / Dacia Duster Android head unit with a 1280x800 screen. Duster Dash is built for 1 GB units. For live car data (doors, lights, handbrake, hazards, fuel, range, trip stats) it reads the Hiworld CAN box; OBD (ELM327) support adds speed, RPM, outside temperature and battery voltage.</p></details>
-    <details><summary>How does the free trial work?</summary><p>Enter your name and email, download, and try everything free for <span data-trial>14</span> days. If you want to keep using it after that, buy a license code for <span data-price>$9.99</span>. No payment details are asked for to start the trial.</p></details>
+    <details><summary>How does the free trial work?</summary><p>Enter your name and email, download, and try everything free for <span data-trial>14</span> days. If you want to keep using it after that, buy a license code for <span data-price>$9.99</span>. A license also unlocks OBD/CAN service consoles (PIN-protected). No payment details are asked for to start the trial.</p></details>
     <details class="needs-buy"><summary>Can I just buy it without trying?</summary><p>Yes. Use the Buy now button to get your license code for <span data-price>$9.99</span>.</p></details>
-    <details><summary>Why do you ask for my name and email?</summary><p>So we can follow up with you about your trial and your feedback.</p></details>
+    <details><summary>Why do you ask for my name and email?</summary><p>So we can contact you about Duster Dash (your trial, feedback, and when a license is available). Phone / WhatsApp, car model and year, and head unit are optional. We don't share your details.</p></details>
     <details><summary>What is Duster Companion?</summary><p>An Android phone app that shows your car's status (fuel %, range, inside temperature, odometer, battery voltage, last trip), synced from the dash over Bluetooth / Wi-Fi. It also sends phone navigation, media and notifications to the dash.</p></details>
     <details><summary>Are the screenshots real?</summary><p>The photos in "Running in a real Duster" are real phone photos of Duster Dash on a Duster's head unit (cropped, straightened, and with street, song and video titles blurred). The feature screens and the Companion screens are rendered mockups from development with sample data (speed, fuel, odometer, track titles).</p></details>
     <details class="needs-feedback"><summary>Where do I send feedback?</summary><p>Use the <a href="#" data-feedback>feedback link</a>. We'd love to hear what works and what doesn't.</p></details>
@@ -324,7 +325,7 @@
 <footer>
   <div class="wrap">
     <div class="links"><a href="#real">Real photos</a><a href="#features">Features</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="#" class="needs-feedback" data-feedback>Feedback</a></div>
-    <p>Duster Dash + Duster Companion. Feature, preview and Companion screens are mockups or renders with sample data; photos marked "Real photo" were taken in a real Duster.</p>
+    <p>Duster Dash 1.0.12 + Duster Companion 1.4.6. Feature, preview and Companion screens are mockups or renders with sample data; photos marked "Real photo" were taken in a real Duster.</p>
     <p>Renault and Dacia are trademarks of their respective owners. Not affiliated with or endorsed by Renault or Dacia.</p>
   </div>
 </footer>
@@ -336,7 +337,7 @@
 
     <div id="gate-form-view">
       <h2 id="gate-title">Get Duster Dash</h2>
-      <p class="sub" style="font-size:.98rem;margin-bottom:0">Enter your name and email to unlock the download. Try everything free for <span data-trial>14</span> days.</p>
+      <p class="sub" style="font-size:.98rem;margin-bottom:0">A few details, then the download starts. Try everything free for <span data-trial>14</span> days.</p>
       <form id="gate-form" novalidate>
         <label for="f-name">Name</label>
         <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
@@ -344,11 +345,18 @@
         <label for="f-email">Email</label>
         <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="e-email" placeholder="you@email.com">
         <p class="err" id="e-email" aria-live="polite"></p>
+        <label for="f-phone">Phone or WhatsApp <span class="opt">(optional)</span></label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+213 …">
+        <label for="f-car">Car model and year <span class="opt">(optional)</span></label>
+        <input id="f-car" name="car" type="text" autocomplete="off" placeholder="e.g. Duster 2021">
+        <label for="f-unit">Head unit <span class="opt">(optional)</span></label>
+        <input id="f-unit" name="head_unit" type="text" autocomplete="off" placeholder="e.g. 1280×800 Android">
         <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
         <input type="hidden" name="source" id="f-source" value="trial">
+        <input type="hidden" name="src" id="f-src" value="">
         <div class="form-error hidden" id="form-error" role="alert"></div>
         <button class="btn btn-primary" type="submit" id="gate-submit">Continue to download</button>
-        <p class="fine">We'll use your name and email to follow up with you. No payment details are collected here.</p>
+        <p class="fine">We'll use this only to contact you about Duster Dash. We don't share it. No payment details are collected here.</p>
       </form>
     </div>
 
@@ -356,7 +364,7 @@
       <div class="ok-badge" aria-hidden="true">&#10003;</div>
       <h2 id="done-title" tabindex="-1">Thanks!</h2>
       <p class="sub" style="font-size:.98rem;margin-bottom:0">Your download is ready.</p>
-      <a class="btn btn-primary" id="dl-link" href="#" rel="noopener" download>Download Duster Dash</a>
+      <a class="btn btn-primary" id="dl-link" href="#" rel="noopener" download>Download Duster Dash 1.0.12</a>
       <p class="dl-meta" id="dl-meta">For your head unit (Android APK)</p>
       <a class="btn btn-ghost hidden" id="dl-companion" href="#" rel="noopener" download>Download Duster Companion</a>
       <p class="dl-meta hidden" id="dl-companion-meta">For your Android phone (APK)</p>
@@ -364,8 +372,8 @@
         <li>Install the APK on the head unit (allow installs from this source if Android asks).</li>
         <li>Try everything free for <span data-trial>14</span> days.</li>
         <li class="needs-feedback"><a href="#" data-feedback>Send us your feedback</a>.</li>
-        <li class="needs-buy"><a href="#" data-buy>Buy your license code</a> for <span data-price>$9.99</span> to keep using it.</li>
-        <li class="no-buy hidden">License codes (<span data-price>$9.99</span>) to keep using it after the trial are coming soon.</li>
+        <li class="needs-buy"><a href="#" data-buy>Buy your license code</a> for <span data-price>$9.99</span> to keep using it. A license also unlocks OBD/CAN service consoles (PIN-protected).</li>
+        <li class="no-buy hidden">License codes (<span data-price>$9.99</span>) to keep using it after the trial are coming soon. A license also unlocks OBD/CAN service consoles (PIN-protected).</li>
       </ol>
     </div>
   </div>

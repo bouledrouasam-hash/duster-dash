@@ -3,18 +3,20 @@
    Everything you need to fill in is in this one block.
    ===================================================================== */
 window.DUSTER_CONFIG = {
-  // Where the Name + Email form is sent (POST).
+  // Where the lead form is sent (POST).
+  //  - FormSubmit (no account; first real submit emails you an activation link):
+  //                    "https://formsubmit.co/ajax/you@example.com"   (FORM_MODE "json")
   //  - Formspree:        "https://formspree.io/f/XXXXXXXX"            (FORM_MODE "json")
   //  - Google Apps Script web app: "https://script.google.com/macros/s/XXXX/exec"  (FORM_MODE "form")
   //  - Leave "" to skip sending (the download still unlocks, but you capture NO leads).
-  FORM_ENDPOINT: "",
+  FORM_ENDPOINT: "https://formsubmit.co/ajax/Bouledrouasam@hotmail.com",
 
-  // "json" = JSON body (Formspree and most form backends; needs CORS and a readable response).
+  // "json" = JSON body (FormSubmit AJAX, Formspree and most form backends; needs CORS and a readable response).
   // "form" = urlencoded body sent with no-cors (Google Apps Script style; response not readable, treated as success).
   FORM_MODE: "json",
 
   // Link revealed after a successful form submit (the Duster Dash APK / download page).
-  DOWNLOAD_URL: "downloads/duster-dash-v1.0.11.apk",
+  DOWNLOAD_URL: "downloads/duster-dash-v1.0.12.apk",
 
   // Optional: second download button for the phone app (Duster Companion). Leave "" to hide it.
   COMPANION_DOWNLOAD_URL: "downloads/duster-companion-v1.4.6.apk",

@@ -17,6 +17,13 @@
     clearTimeout(toastEl._t); toastEl._t = setTimeout(function () { toastEl.classList.add("hidden"); }, 4000);
   }
 
+  // Campaign tag from the URL, e.g. ?src=fb from Facebook group posts.
+  function campaignSrc() {
+    try {
+      return (new URLSearchParams(location.search).get("src") || "").trim();
+    } catch (e) { return ""; }
+  }
+
   // ---- buy + feedback links (degrade gracefully when not configured)
   function isPlaceholder(u) { return !u || /you@example\.com|XXXX/i.test(u); }
   var hasBuy = !isPlaceholder(C.BUY_URL), hasFeedback = !isPlaceholder(C.FEEDBACK_URL);
@@ -38,12 +45,24 @@
   // ---- download gate
   var dlg = $("#gate"), form = $("#gate-form");
   var viewForm = $("#gate-form-view"), viewDone = $("#gate-done-view");
-  var nameI = $("#f-name"), emailI = $("#f-email"), srcI = $("#f-source");
+  var nameI = $("#f-name"), emailI = $("#f-email"), phoneI = $("#f-phone");
+  var carI = $("#f-car"), unitI = $("#f-unit"), srcI = $("#f-source"), campI = $("#f-src");
   var errName = $("#e-name"), errEmail = $("#e-email"), formErr = $("#form-error"), submitB = $("#gate-submit");
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   var lastOpener = null;
 
-  function reveal(name) {
+  function startDownload() {
+    if (!C.DOWNLOAD_URL) return;
+    var a = document.createElement("a");
+    a.href = C.DOWNLOAD_URL;
+    a.setAttribute("download", "");
+    a.rel = "noopener";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  function reveal(name, autoDl) {
     $("#done-title").textContent = name ? "Thanks, " + name.split(" ")[0] + "!" : "Thanks!";
     var dl = $("#dl-link");
     if (C.DOWNLOAD_URL) {
@@ -58,6 +77,7 @@
       cp.href = C.COMPANION_DOWNLOAD_URL; cp.classList.remove("hidden"); $("#dl-companion-meta").classList.remove("hidden");
     }
     viewForm.classList.add("hidden"); viewDone.classList.remove("hidden");
+    if (autoDl) startDownload();
     setTimeout(function () { $("#done-title").focus(); }, 30);
   }
   function showForm() { viewDone.classList.add("hidden"); viewForm.classList.remove("hidden"); }
@@ -65,8 +85,9 @@
   function openGate(source, opener) {
     lastOpener = opener || null;
     srcI.value = source || "trial";
+    if (campI) campI.value = campaignSrc();
     var saved = null; try { saved = JSON.parse(localStorage.getItem("duster_lead") || "null"); } catch (e) {}
-    if (saved && saved.email) reveal(saved.name); else { showForm(); clearErrors(); }
+    if (saved && saved.email) reveal(saved.name, false); else { showForm(); clearErrors(); }
     if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
     if (!saved) setTimeout(function () { nameI.focus(); }, 30);
   }
@@ -90,6 +111,8 @@
   nameI.addEventListener("input", function () { if (nameI.value.trim()) setErr(nameI, errName, ""); });
   emailI.addEventListener("input", function () { if (EMAIL_RE.test(emailI.value.trim())) setErr(emailI, errEmail, ""); });
 
+  function val(el) { return el ? el.value.trim() : ""; }
+
   function send(payload) {
     if (!C.FORM_ENDPOINT) { console.warn("FORM_ENDPOINT is empty in assets/config.js: lead NOT sent anywhere."); return Promise.resolve(); }
     if (C.FORM_MODE === "form") {
@@ -106,18 +129,29 @@
     if (form.elements["_gotcha"].value) { return; } // bot
     if (!validate()) { (nameI.getAttribute("aria-invalid") ? nameI : emailI).focus(); return; }
     var payload = {
-      name: nameI.value.trim(), email: emailI.value.trim(), source: srcI.value,
-      page: location.href, submitted_at: new Date().toISOString(),
-      _subject: "Duster Dash download: " + nameI.value.trim()
+      name: nameI.value.trim(),
+      email: emailI.value.trim(),
+      phone: val(phoneI),
+      car: val(carI),
+      head_unit: val(unitI),
+      source: srcI.value,
+      src: (campI && campI.value) || campaignSrc(),
+      page: location.href,
+      submitted_at: new Date().toISOString(),
+      _subject: "Duster Dash download: " + nameI.value.trim(),
+      _captcha: "false",
+      _template: "table",
+      _replyto: emailI.value.trim()
     };
+    // Unlock the APK immediately (same user-gesture turn) so a form-backend
+    // failure or delay never blocks the download.
+    reveal(payload.name, true);
     submitB.disabled = true; var label = submitB.textContent; submitB.textContent = "Sending...";
     send(payload).then(function () {
       try { localStorage.setItem("duster_lead", JSON.stringify({ name: payload.name, email: payload.email })); } catch (e) {}
-      reveal(payload.name);
     }).catch(function (err) {
       console.error(err);
-      formErr.textContent = "Sorry, we couldn't send that. Please check your connection and try again.";
-      formErr.classList.remove("hidden");
+      toast("We couldn't save your details, but your download is ready.");
     }).then(function () { submitB.disabled = false; submitB.textContent = label; });
   });
 })();
