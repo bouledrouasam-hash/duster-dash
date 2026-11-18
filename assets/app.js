@@ -17,12 +17,23 @@
     clearTimeout(toastEl._t); toastEl._t = setTimeout(function () { toastEl.classList.add("hidden"); }, 4000);
   }
 
-  // ---- buy + feedback links
+  // ---- buy + feedback links (degrade gracefully when not configured)
+  function isPlaceholder(u) { return !u || /you@example\.com|XXXX/i.test(u); }
+  var hasBuy = !isPlaceholder(C.BUY_URL), hasFeedback = !isPlaceholder(C.FEEDBACK_URL);
+  if (!hasBuy) {
+    console.info("BUY_URL is not set in assets/config.js: Buy buttons are hidden.");
+    $$(".needs-buy, [data-buy]").forEach(function (n) { n.classList.add("hidden"); });
+    $$(".no-buy").forEach(function (n) { n.classList.remove("hidden"); });
+  }
   $$("[data-buy]").forEach(function (a) {
-    if (C.BUY_URL) { a.href = C.BUY_URL; a.target = "_blank"; a.rel = "noopener"; }
-    else a.addEventListener("click", function (e) { e.preventDefault(); console.warn("BUY_URL is not set in assets/config.js"); toast("Buy link not set yet. Edit BUY_URL in assets/config.js."); });
+    if (hasBuy) { a.href = C.BUY_URL; a.target = "_blank"; a.rel = "noopener"; }
+    else a.addEventListener("click", function (e) { e.preventDefault(); toast("Buying isn't open yet. Start the free trial instead."); });
   });
-  $$("[data-feedback]").forEach(function (a) { if (C.FEEDBACK_URL) a.href = C.FEEDBACK_URL; });
+  if (!hasFeedback) {
+    console.info("FEEDBACK_URL is empty or a placeholder in assets/config.js: feedback links are hidden.");
+    $$(".needs-feedback, [data-feedback]").forEach(function (n) { n.classList.add("hidden"); });
+  }
+  $$("[data-feedback]").forEach(function (a) { if (hasFeedback) a.href = C.FEEDBACK_URL; });
 
   // ---- download gate
   var dlg = $("#gate"), form = $("#gate-form");
@@ -35,11 +46,19 @@
   function reveal(name) {
     $("#done-title").textContent = name ? "Thanks, " + name.split(" ")[0] + "!" : "Thanks!";
     var dl = $("#dl-link");
-    if (C.DOWNLOAD_URL) { dl.href = C.DOWNLOAD_URL; dl.classList.remove("hidden"); }
-    else { dl.removeAttribute("href"); dl.textContent = "Download link not set yet"; dl.setAttribute("aria-disabled", "true"); console.warn("DOWNLOAD_URL is not set in assets/config.js"); }
+    if (C.DOWNLOAD_URL) {
+      dl.href = C.DOWNLOAD_URL; dl.classList.remove("hidden");
+    } else {
+      dl.removeAttribute("href"); dl.textContent = "Download link not set yet"; dl.setAttribute("aria-disabled", "true");
+      $("#dl-meta").textContent = "The download isn't available yet. We'll follow up by email.";
+      console.warn("DOWNLOAD_URL is not set in assets/config.js");
+    }
     var cp = $("#dl-companion");
-    if (C.COMPANION_DOWNLOAD_URL) { cp.href = C.COMPANION_DOWNLOAD_URL; cp.classList.remove("hidden"); }
+    if (C.COMPANION_DOWNLOAD_URL) {
+      cp.href = C.COMPANION_DOWNLOAD_URL; cp.classList.remove("hidden"); $("#dl-companion-meta").classList.remove("hidden");
+    }
     viewForm.classList.add("hidden"); viewDone.classList.remove("hidden");
+    setTimeout(function () { $("#done-title").focus(); }, 30);
   }
   function showForm() { viewDone.classList.add("hidden"); viewForm.classList.remove("hidden"); }
 

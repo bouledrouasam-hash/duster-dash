@@ -3,129 +3,168 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Duster Dash + Duster Companion: a live digital dash for your Duster</title>
-<meta name="description" content="Duster Dash turns your Renault / Dacia Duster Android head unit (1280x800) into a live digital dashboard. Duster Companion puts your car's status on your phone. Try free for 14 days.">
+<title>Duster Dash: a live digital dashboard for Renault / Dacia Duster head units</title>
+<meta name="description" content="Duster Dash turns your Renault / Dacia Duster Android head unit (1280x800, 1 GB RAM) into a live dashboard: doors, lights, fuel, range, speed limit, next turn and media on one screen. Try free for 14 days, then $9.99.">
 <meta name="theme-color" content="#16181E">
+<!-- TODO: once the domain is known, uncomment and set: <link rel="canonical" href="https://YOUR-DOMAIN/"> -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Duster Dash + Duster Companion">
-<meta property="og:description" content="A live digital dash for your Duster. Try free for 14 days, then $9.99.">
-<meta property="og:image" content="assets/og-hero-1200x628.jpg"><!-- TODO: use an absolute URL once the site is live -->
+<meta property="og:site_name" content="Duster Dash">
+<meta property="og:title" content="Duster Dash: a live digital dash for your Duster">
+<meta property="og:description" content="Turn your Duster's Android head unit into a live dashboard. Try free for 14 days, then $9.99.">
+<!-- TODO: og:image must be an absolute URL (https://YOUR-DOMAIN/assets/og-live-1200x628.jpg) once the site is live -->
+<meta property="og:image" content="assets/og-live-1200x628.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:image:alt" content="Photo of Duster Dash running on a Duster's head unit while driving">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/companion-icon.png">
+<meta name="twitter:title" content="Duster Dash: a live digital dash for your Duster">
+<meta name="twitter:description" content="Turn your Duster's Android head unit into a live dashboard. Try free for 14 days, then $9.99.">
+<link rel="icon" type="image/png" href="assets/companion-icon.png">
+<link rel="apple-touch-icon" href="assets/companion-icon.png">
+<link rel="preload" as="image" href="assets/live/live-3-driving-nav-1200.webp" imagesrcset="assets/live/live-3-driving-nav-800.webp 800w, assets/live/live-3-driving-nav-1200.webp 1200w, assets/live/live-3-driving-nav-1600.webp 1600w" imagesizes="(min-width:900px) 560px, 100vw">
 <link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Duster Dash","operatingSystem":"Android","applicationCategory":"UtilitiesApplication","description":"Android dashboard / HOME launcher for Renault / Dacia Duster head units (1280x800).","offers":{"@type":"Offer","price":"9.99","priceCurrency":"USD"}}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="#top">Duster Dash</a>
     <nav class="nav" aria-label="Sections">
-      <a href="#video">Video</a><a href="#features">Features</a><a href="#compatibility">Compatibility</a><a href="#how">How it works</a><a href="#faq">FAQ</a>
+      <a href="#real">Real photos</a><a href="#features">Features</a><a href="#compatibility">What you need</a><a href="#install">Install</a><a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-primary btn-sm" href="#" data-open-form="trial">Try free</a>
   </div>
 </header>
 
-<main id="top">
+<main id="main">
+<span id="top"></span>
 <!-- HERO -->
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Duster Dash + Duster Companion</p>
-      <h1>Your Duster, a live digital dash.</h1>
-      <span class="rule"></span>
-      <p class="sub">Turn your Duster's Android head unit into a live dashboard that reads the car's own data, and keep your car's status on your phone.</p>
+    <div class="hero-txt">
+      <p class="eyebrow">For Renault / Dacia Duster</p>
+      <h1>Turn your Duster's screen into a live digital dash.</h1>
+      <p class="sub">Duster Dash reads your car's own data (doors, lights, handbrake, fuel, range, speed) and puts it on one clear screen, with a speed-limit alert, next-turn panel and media controls.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#" data-buy>Buy now, <span data-price>$9.99</span></a>
-        <a class="btn btn-ghost" href="#" data-open-form="trial">Try free for <span data-trial>14</span> days</a>
+        <a class="btn btn-primary" href="#" data-open-form="trial">Try free for <span data-trial>14</span> days</a>
+        <a class="btn btn-ghost needs-buy" href="#" data-buy>Buy now, <span data-price>$9.99</span></a>
       </div>
-      <p class="cta-note">Try everything free for <span data-trial>14</span> days, then buy your license code for <span data-price>$9.99</span> to keep using it.</p>
+      <p class="cta-note">Free trial: just your name and email, no card. Then <span data-price>$9.99</span> for a license code to keep it.</p>
+      <ul class="req-chips" aria-label="Requirements">
+        <li>Android head unit, 1280 × 800</li>
+        <li>Runs on 1 GB RAM</li>
+        <li>Hiworld CAN box for live car data</li>
+        <li>ELM327 OBD supported</li>
+      </ul>
     </div>
-    <div>
-      <div class="hero-img">
-        <img src="assets/hero-square.webp" width="1080" height="1080" alt="Duster Dash on a head unit next to the Duster Companion phone app" fetchpriority="high">
-      </div>
-      <p class="mock-note">Illustrative mockups · sample data</p>
-    </div>
+    <figure class="hero-img">
+      <!-- IMAGE SLOT hero: replace the 3 files in assets/live/ with same names to swap -->
+      <img data-slot="hero" src="assets/live/live-3-driving-nav-1200.webp"
+           srcset="assets/live/live-3-driving-nav-800.webp 800w, assets/live/live-3-driving-nav-1200.webp 1200w, assets/live/live-3-driving-nav-1600.webp 1600w"
+           sizes="(min-width:900px) 560px, 100vw" width="1600" height="1000" fetchpriority="high"
+           alt="Photo of a Duster's head unit running Duster Dash while driving: 65 km/h, a 60 km/h limit sign, next-turn panel, mini map, shortcut buttons and media card">
+      <figcaption><span class="tag">Real photo</span> Duster Dash running in a Duster while driving. Street name and song blurred.</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- VIDEO -->
-<section id="video" class="alt">
+<!-- REAL PHOTOS -->
+<section id="real" class="alt">
   <div class="wrap">
-    <p class="eyebrow">See it</p>
-    <h2>Duster Dash in 28 seconds</h2>
+    <p class="eyebrow">Running in a real Duster</p>
+    <h2>Not just mockups: here it is on the road</h2>
     <span class="rule"></span>
-    <div class="video-box">
-      <video controls playsinline preload="metadata" poster="assets/poster.jpg" width="1280" height="720">
-        <source src="assets/duster-dash-promo.mp4" type="video/mp4">
-        Your browser can't play this video.
-      </video>
+    <p class="sub">Phone photos of Duster Dash on a Duster's head unit, cropped and straightened. Glare, dust and reflections are real; street names, song and video titles are blurred for privacy.</p>
+    <div class="gallery">
+      <figure class="g-main">
+        <img data-slot="real-driving" src="assets/live/live-3-driving-nav-1200.webp"
+             srcset="assets/live/live-3-driving-nav-800.webp 800w, assets/live/live-3-driving-nav-1200.webp 1200w, assets/live/live-3-driving-nav-1600.webp 1600w"
+             sizes="(min-width:1160px) 1080px, 100vw" width="1600" height="1000" loading="lazy"
+             alt="Duster Dash while driving in daylight: 65 km/h, 60 km/h limit sign with over-limit alert, next turn in 2.6 km, mini map, Music, YouTube, Home and School shortcuts, media card">
+        <figcaption><b>Driving, daytime.</b> 65 km/h with a 60 km/h limit sign and over-limit alert, the next-turn panel with mini map, shortcut buttons and the media card.</figcaption>
+      </figure>
+      <figure>
+        <img data-slot="real-night" src="assets/live/live-2-lowbeam-media-800.webp"
+             srcset="assets/live/live-2-lowbeam-media-800.webp 800w, assets/live/live-2-lowbeam-media-1200.webp 1200w, assets/live/live-2-lowbeam-media-1600.webp 1600w"
+             sizes="(min-width:900px) 540px, 100vw" width="1600" height="1000" loading="lazy"
+             alt="Duster Dash at night with low beam on: the car top-view shows the headlights, a 60 km/h limit reminder, media card with playback controls and trip stats">
+        <figcaption><b>Night, low beam on.</b> The car top-view shows the headlights, with a 60 km/h limit reminder, the media card and trip stats.</figcaption>
+      </figure>
+      <figure>
+        <img data-slot="real-parked" src="assets/live/live-1-alerts-parked-800.webp"
+             srcset="assets/live/live-1-alerts-parked-800.webp 800w, assets/live/live-1-alerts-parked-1200.webp 1200w, assets/live/live-1-alerts-parked-1600.webp 1600w"
+             sizes="(min-width:900px) 540px, 100vw" width="1600" height="1000" loading="lazy"
+             alt="Duster Dash while parked: handbrake and door indicators, a front-left door open alert, an engine fault-code alert and trip stats">
+        <figcaption><b>Parked.</b> Handbrake and door status, a front-left door-open alert, an engine fault-code alert and trip stats (fuel used, average consumption, average speed).</figcaption>
+      </figure>
     </div>
-    <p class="mock-note">The opening shot is an AI-generated illustration. The app screens that follow are illustrative mockups · sample data.</p>
   </div>
 </section>
 
 <!-- FEATURES -->
 <section id="features">
   <div class="wrap">
-    <p class="eyebrow">Duster Dash</p>
+    <p class="eyebrow">Duster Dash features</p>
     <h2>Everything on one screen</h2>
     <span class="rule"></span>
-    <p class="sub">Duster Dash is an Android dashboard / HOME launcher for Dacia / Renault Duster head units.</p>
+    <p class="sub">Duster Dash is an Android dashboard / HOME launcher for Dacia / Renault Duster head units. The screens in this section are clean mockups with sample data, so each feature is easy to see.</p>
 
     <div class="row">
       <div class="txt">
         <h3>Your Duster, live</h3>
-        <p class="sub" style="font-size:1rem">Reads the car's own data and shows it on a large, clear dash.</p>
+        <p class="lead">Reads the car's own data and shows it on a large, clear dash.</p>
         <ul>
           <li>Live car data from the Hiworld CAN box: doors, lights, handbrake, hazards, fuel %, range, trip stats</li>
           <li>OBD (ELM327) support: speed, RPM, outside temperature, battery voltage</li>
           <li>Large speedometer with RPM</li>
         </ul>
       </div>
-      <div>
-        <div class="shot"><img src="assets/dash-minimap.webp" width="1280" height="800" alt="Duster Dash main screen with clock, car top-view, speedometer and mini map" loading="lazy"></div>
-        <p class="mock-note">Illustrative mockup · sample data</p>
-      </div>
+      <figure>
+        <div class="shot"><img data-slot="feature-live" src="assets/dash-minimap.webp" width="1280" height="800" alt="Mockup of the Duster Dash main screen with clock, car top-view, speedometer and mini map" loading="lazy"></div>
+        <figcaption class="mock-note">Mockup · sample data</figcaption>
+      </figure>
     </div>
 
     <div class="row flip">
       <div class="txt">
         <h3>Music and map, side by side</h3>
-        <p class="sub" style="font-size:1rem">Media controls next to a turn-by-turn panel.</p>
+        <p class="lead">Media controls next to a turn-by-turn panel.</p>
         <ul>
           <li>Media card with playback controls (Spotify / Bluetooth), placed left or right of the map</li>
           <li>Turn-by-turn next-turn panel with an offline mini map (OpenStreetMap)</li>
           <li>Shortcut buttons (Music, YouTube, Home, School...)</li>
         </ul>
       </div>
-      <div>
-        <div class="shot"><img src="assets/dash-media-map.webp" width="1280" height="800" alt="Duster Dash showing a navigation map on the left and a media card on the right" loading="lazy"></div>
-        <p class="mock-note">Illustrative mockup · sample data</p>
-      </div>
+      <figure>
+        <div class="shot"><img data-slot="feature-media-map" src="assets/dash-media-map.webp" width="1280" height="800" alt="Mockup of Duster Dash with a navigation map on the left and a media card on the right" loading="lazy"></div>
+        <figcaption class="mock-note">Mockup · sample data</figcaption>
+      </figure>
     </div>
 
     <div class="row">
       <div class="txt">
         <h3>Speed limit and brake lights, at a glance</h3>
-        <p class="sub" style="font-size:1rem">See your limit and your car's lights without hunting.</p>
+        <p class="lead">See your limit and your car's lights without hunting.</p>
         <ul>
           <li>Speed-limit sign and over-limit alert</li>
           <li>Car top-view with lights / brake state</li>
           <li>Roll / pitch display</li>
         </ul>
       </div>
-      <div>
-        <div class="shot"><img src="assets/dash-brake-limit.webp" width="1280" height="800" alt="Duster Dash with a 60 speed-limit sign, over-limit alert and red brake lights on the car top-view" loading="lazy"></div>
-        <p class="mock-note">Illustrative mockup · sample data</p>
-      </div>
+      <figure>
+        <div class="shot"><img data-slot="feature-brake-limit" src="assets/dash-brake-limit.webp" width="1280" height="800" alt="Mockup of Duster Dash with a 60 speed-limit sign, over-limit alert and red brake lights on the car top-view" loading="lazy"></div>
+        <figcaption class="mock-note">Mockup · sample data</figcaption>
+      </figure>
     </div>
 
     <div class="row flip">
       <div class="txt">
         <h3>Make it yours</h3>
-        <p class="sub" style="font-size:1rem">Full settings, built into the dash.</p>
+        <p class="lead">Full settings, built into the dash.</p>
         <ul>
           <li>Display sizes</li>
           <li>Night dimming</li>
@@ -133,13 +172,13 @@
           <li>Alerts, service reminders and phone pairing</li>
         </ul>
       </div>
-      <div>
-        <div class="shot"><img src="assets/dash-settings.webp" width="1280" height="800" alt="Duster Dash settings screen showing Display options" loading="lazy"></div>
-        <p class="mock-note">Illustrative mockup · sample data</p>
-      </div>
+      <figure>
+        <div class="shot"><img data-slot="feature-settings" src="assets/dash-settings.webp" width="1280" height="800" alt="Mockup of the Duster Dash settings screen showing Display options" loading="lazy"></div>
+        <figcaption class="mock-note">Mockup · sample data</figcaption>
+      </figure>
     </div>
 
-    <div class="cards" style="margin-top:30px">
+    <div class="cards">
       <div class="card"><span class="bar"></span><h3>Trip computer</h3><p>Fuel used, average consumption and average speed.</p></div>
       <div class="card"><span class="bar"></span><h3>Shortcut buttons</h3><p>Music, YouTube, Home, School and more, one tap from the dash.</p></div>
       <div class="card"><span class="bar"></span><h3>Light on RAM</h3><p>Built for 1 GB head units.</p></div>
@@ -147,15 +186,51 @@
   </div>
 </section>
 
+<!-- IN TESTING: hood view + dashcam PiP. Renders from test builds, not yet tested on the car. Delete this whole section to remove it. -->
+<section id="testing" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">In testing</p>
+    <h2>Coming next: hood view and dashcam picture-in-picture</h2>
+    <span class="rule"></span>
+    <p class="sub">These two features are in the latest test builds but have not been fully tested on the car yet, so they may change. The images are rendered previews, not photos.</p>
+    <div class="test-grid">
+      <figure class="test-card">
+        <div class="shot"><img data-slot="testing-hood" src="assets/renders/dash-hood-view-800.webp" srcset="assets/renders/dash-hood-view-800.webp 800w, assets/renders/dash-hood-view-1280.webp 1280w" sizes="(min-width:900px) 540px, 100vw" width="1280" height="800" loading="lazy" alt="Rendered preview of the hood view: a first-person view over the car's hood with a right turn in 70 m drawn ahead"></div>
+        <figcaption><span class="tag tag-test">Preview</span> <b>Hood view.</b> Shortly before a turn from your phone's navigation, the dash tilts into a first-person view over the hood and draws the turn ahead. It can be switched off in Settings › Display.</figcaption>
+      </figure>
+      <figure class="test-card">
+        <div class="shot"><img data-slot="testing-dashcam" src="assets/renders/dash-dashcam-left-800.webp" srcset="assets/renders/dash-dashcam-left-800.webp 800w, assets/renders/dash-dashcam-left-1280.webp 1280w" sizes="(min-width:900px) 540px, 100vw" width="1280" height="800" loading="lazy" alt="Rendered preview of the dashcam picture-in-picture: a left camera view shown next to the car top-view after the left indicator is switched on, with a sample image"></div>
+        <figcaption><span class="tag tag-test">Preview</span> <b>Dashcam picture-in-picture.</b> Shows a live view from a supported Wi-Fi dashcam (currently a Viidure / GeneralPlus 3-channel model) on the dash, and can switch to the side camera with the indicator. Camera image here is a sample.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+  <div class="wrap">
+    <p class="eyebrow">Watch</p>
+    <h2>The tour in 28 seconds</h2>
+    <span class="rule"></span>
+    <div class="video-box">
+      <video controls playsinline preload="none" poster="assets/poster.jpg" width="1280" height="720" aria-label="Duster Dash promo video, 28 seconds">
+        <source src="assets/duster-dash-promo.mp4" type="video/mp4">
+        Your browser can't play this video. <a href="assets/duster-dash-promo.mp4">Download the video</a>.
+      </video>
+    </div>
+    <p class="mock-note">The opening shots are AI-generated illustrations. The app screens that follow are mockups with sample data.</p>
+  </div>
+</section>
+
 <!-- COMPANION -->
-<section class="alt">
+<section id="companion" class="alt">
   <div class="wrap">
     <div class="row phone-row">
       <div class="txt">
-        <p class="eyebrow">Duster Companion</p>
+        <p class="eyebrow">Duster Companion (phone app)</p>
         <h2>Your car's status in your pocket</h2>
         <span class="rule"></span>
-        <p class="sub">The Android phone app that shows your car's status, synced from the dash over Bluetooth / Wi-Fi.</p>
+        <p class="lead">The Android phone app that shows your car's status, synced from the dash over Bluetooth / Wi-Fi.</p>
         <ul>
           <li>"My Duster" screen: fuel %, range, inside temperature, odometer, battery voltage, last trip</li>
           <li>Live car photo that shows the light state (off, DRL, low beam)</li>
@@ -163,15 +238,15 @@
           <li>Shortcuts and settings tabs</li>
         </ul>
       </div>
-      <div class="phone-pair">
-        <div class="phone"><img src="assets/companion-status.webp" width="720" height="1560" alt="Duster Companion My Duster screen showing fuel, temperature, odometer, battery and last trip" loading="lazy"></div>
+      <figure class="phone-pair">
+        <div class="phone"><img data-slot="companion-status" src="assets/companion-status.webp" width="720" height="1560" alt="Mockup of the Duster Companion My Duster screen showing fuel, temperature, odometer, battery and last trip" loading="lazy"></div>
         <div class="lights">
-          <img src="assets/companion-light-off.webp" width="695" height="464" alt="Car photo, lights off" loading="lazy">
-          <img src="assets/companion-light-drl.webp" width="695" height="464" alt="Car photo, DRL on" loading="lazy">
-          <img src="assets/companion-light-beam.webp" width="695" height="464" alt="Car photo, low beam on" loading="lazy">
+          <img data-slot="companion-light-off" src="assets/companion-light-off.webp" width="695" height="464" alt="Car photo in the app, lights off" loading="lazy">
+          <img data-slot="companion-light-drl" src="assets/companion-light-drl.webp" width="695" height="464" alt="Car photo in the app, DRL on" loading="lazy">
+          <img data-slot="companion-light-beam" src="assets/companion-light-beam.webp" width="695" height="464" alt="Car photo in the app, low beam on" loading="lazy">
         </div>
-        <p class="mock-note">Illustrative mockups · sample data</p>
-      </div>
+        <figcaption class="mock-note">Mockups · sample data · lights off / DRL / low beam</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -179,34 +254,39 @@
 <!-- COMPATIBILITY -->
 <section id="compatibility">
   <div class="wrap">
-    <p class="eyebrow">Compatibility</p>
+    <p class="eyebrow">What you need</p>
     <h2>Made for the Duster head unit</h2>
     <span class="rule"></span>
     <div class="compat">
-      <div class="card"><strong>Renault / Dacia Duster</strong><p>Android head units</p></div>
-      <div class="card"><strong>1280 × 800</strong><p>Screen resolution Duster Dash is designed for</p></div>
-      <div class="card"><strong>1 GB</strong><p>Light on RAM: built for 1 GB head units</p></div>
+      <div class="card"><strong>Renault / Dacia Duster</strong><p>With an Android head unit</p></div>
+      <div class="card"><strong>1280 × 800</strong><p>The screen resolution Duster Dash is designed for</p></div>
+      <div class="card"><strong>1 GB RAM</strong><p>Light on memory: built for 1 GB head units</p></div>
     </div>
-    <p class="sub" style="margin-top:22px;font-size:1rem">Live car data comes from the Hiworld CAN box. OBD (ELM327) adds speed, RPM, outside temperature and battery voltage. Duster Companion runs on Android phones.</p>
+    <ul class="checklist">
+      <li><b>Hiworld CAN box:</b> live car data (doors, lights, handbrake, hazards, fuel %, range, trip stats) comes from it.</li>
+      <li><b>ELM327 OBD adapter:</b> adds speed, RPM, outside temperature and battery voltage.</li>
+      <li><b>Android phone (for Duster Companion):</b> synced from the dash over Bluetooth / Wi-Fi.</li>
+    </ul>
+    <p class="small">Not sure your head unit fits? <a href="#" data-open-form="trial">Try it free</a> before you pay anything.</p>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how" class="alt">
+<!-- INSTALL + PRICING -->
+<section id="install" class="alt">
+  <span id="how"></span>
   <div class="wrap">
     <p class="eyebrow">How it works</p>
-    <h2>Try it free, then keep it</h2>
+    <h2>Install it, try it free, then keep it</h2>
     <span class="rule"></span>
     <ol class="steps">
-      <li><b>Download</b> and enter your name and email.</li>
-      <li>Try everything <b>free for <span data-trial>14</span> days</b>.</li>
-      <li>Send us your <b>feedback</b>.</li>
-      <li>Buy your <b>license code</b> for <span data-price>$9.99</span> to keep using it.</li>
+      <li><b>Get the download.</b> Enter your name and email to unlock the Duster Dash APK (and the Duster Companion APK for your phone).</li>
+      <li><b>Install on the head unit.</b> Open the APK on the head unit (download it there, or copy it over by USB). If Android asks, allow installs from this source.</li>
+      <li><b>Try everything free for <span data-trial>14</span> days.</b> <span class="needs-feedback">Tell us <a href="#" data-feedback>what works and what doesn't</a>.</span></li>
+      <li><b>Keep it for <span data-price>$9.99</span>.</b> Buy a license code to keep using it after the trial.</li>
     </ol>
     <div class="cta-row" style="margin-top:28px">
-      <a class="btn btn-primary" href="#" data-open-form="download">Download</a>
-      <a class="btn btn-ghost" href="#" data-buy>Buy now, <span data-price>$9.99</span></a>
-      <a class="btn btn-ghost" href="#" data-feedback>Send feedback</a>
+      <a class="btn btn-primary" href="#" data-open-form="download">Get the free download</a>
+      <a class="btn btn-ghost needs-buy" href="#" data-buy>Buy now, <span data-price>$9.99</span></a>
     </div>
   </div>
 </section>
@@ -218,12 +298,12 @@
     <h2>Questions</h2>
     <span class="rule"></span>
     <details><summary>What do I need to use Duster Dash?</summary><p>A Renault / Dacia Duster Android head unit with a 1280x800 screen. Duster Dash is built for 1 GB units. For live car data (doors, lights, handbrake, hazards, fuel, range, trip stats) it reads the Hiworld CAN box; OBD (ELM327) support adds speed, RPM, outside temperature and battery voltage.</p></details>
-    <details><summary>How does the free trial work?</summary><p>Download, enter your name and email, and try everything free for <span data-trial>14</span> days. Then send us your feedback and, if you want to keep using it, buy your license code for <span data-price>$9.99</span>.</p></details>
-    <details><summary>Can I just buy it without trying?</summary><p>Yes. Use the Buy now button to get your license code for <span data-price>$9.99</span>.</p></details>
-    <details><summary>Why do you ask for my name and email?</summary><p>So we can reach out and follow up with you about your trial and your feedback.</p></details>
+    <details><summary>How does the free trial work?</summary><p>Enter your name and email, download, and try everything free for <span data-trial>14</span> days. If you want to keep using it after that, buy a license code for <span data-price>$9.99</span>. No payment details are asked for to start the trial.</p></details>
+    <details class="needs-buy"><summary>Can I just buy it without trying?</summary><p>Yes. Use the Buy now button to get your license code for <span data-price>$9.99</span>.</p></details>
+    <details><summary>Why do you ask for my name and email?</summary><p>So we can follow up with you about your trial and your feedback.</p></details>
     <details><summary>What is Duster Companion?</summary><p>An Android phone app that shows your car's status (fuel %, range, inside temperature, odometer, battery voltage, last trip), synced from the dash over Bluetooth / Wi-Fi. It also sends phone navigation, media and notifications to the dash.</p></details>
-    <details><summary>Are the screenshots real?</summary><p>They are rendered mockups from development, not photos of a live head unit. The numbers shown (speed, fuel, odometer, track titles) are sample data.</p></details>
-    <details><summary>Where do I send feedback?</summary><p>Use the <a href="#" data-feedback>feedback link</a>. We'd love to hear what works and what doesn't.</p></details>
+    <details><summary>Are the screenshots real?</summary><p>The photos in "Running in a real Duster" are real phone photos of Duster Dash on a Duster's head unit (cropped, straightened, and with street, song and video titles blurred). The feature screens and the Companion screens are rendered mockups from development with sample data (speed, fuel, odometer, track titles).</p></details>
+    <details class="needs-feedback"><summary>Where do I send feedback?</summary><p>Use the <a href="#" data-feedback>feedback link</a>. We'd love to hear what works and what doesn't.</p></details>
   </div>
 </section>
 
@@ -234,8 +314,8 @@
     <span class="rule"></span>
     <p class="sub">Free for <span data-trial>14</span> days. Then <span data-price>$9.99</span> to keep it.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#" data-buy>Buy now, <span data-price>$9.99</span></a>
-      <a class="btn btn-ghost" href="#" data-open-form="trial">Try free for <span data-trial>14</span> days</a>
+      <a class="btn btn-primary" href="#" data-open-form="trial">Try free for <span data-trial>14</span> days</a>
+      <a class="btn btn-ghost needs-buy" href="#" data-buy>Buy now, <span data-price>$9.99</span></a>
     </div>
   </div>
 </section>
@@ -243,8 +323,8 @@
 
 <footer>
   <div class="wrap">
-    <div class="links"><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#" data-feedback>Feedback</a></div>
-    <p>Duster Dash + Duster Companion. Screens shown are illustrative mockups · sample data.</p>
+    <div class="links"><a href="#real">Real photos</a><a href="#features">Features</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="#" class="needs-feedback" data-feedback>Feedback</a></div>
+    <p>Duster Dash + Duster Companion. Feature, preview and Companion screens are mockups or renders with sample data; photos marked "Real photo" were taken in a real Duster.</p>
     <p>Renault and Dacia are trademarks of their respective owners. Not affiliated with or endorsed by Renault or Dacia.</p>
   </div>
 </footer>
@@ -262,7 +342,7 @@
         <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
         <p class="err" id="e-name" aria-live="polite"></p>
         <label for="f-email">Email</label>
-        <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="e-email">
+        <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="e-email" placeholder="you@email.com">
         <p class="err" id="e-email" aria-live="polite"></p>
         <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
         <input type="hidden" name="source" id="f-source" value="trial">
@@ -274,14 +354,18 @@
 
     <div id="gate-done-view" class="hidden">
       <div class="ok-badge" aria-hidden="true">&#10003;</div>
-      <h2 id="done-title">Thanks!</h2>
+      <h2 id="done-title" tabindex="-1">Thanks!</h2>
       <p class="sub" style="font-size:.98rem;margin-bottom:0">Your download is ready.</p>
       <a class="btn btn-primary" id="dl-link" href="#" rel="noopener" download>Download Duster Dash</a>
-      <a class="btn btn-ghost hidden" id="dl-companion" href="#" rel="noopener">Download Duster Companion</a>
+      <p class="dl-meta" id="dl-meta">For your head unit (Android APK)</p>
+      <a class="btn btn-ghost hidden" id="dl-companion" href="#" rel="noopener" download>Download Duster Companion</a>
+      <p class="dl-meta hidden" id="dl-companion-meta">For your Android phone (APK)</p>
       <ol class="next">
+        <li>Install the APK on the head unit (allow installs from this source if Android asks).</li>
         <li>Try everything free for <span data-trial>14</span> days.</li>
-        <li><a href="#" data-feedback>Send us your feedback</a>.</li>
-        <li><a href="#" data-buy>Buy your license code</a> for <span data-price>$9.99</span> to keep using it.</li>
+        <li class="needs-feedback"><a href="#" data-feedback>Send us your feedback</a>.</li>
+        <li class="needs-buy"><a href="#" data-buy>Buy your license code</a> for <span data-price>$9.99</span> to keep using it.</li>
+        <li class="no-buy hidden">License codes (<span data-price>$9.99</span>) to keep using it after the trial are coming soon.</li>
       </ol>
     </div>
   </div>
