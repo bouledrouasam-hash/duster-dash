@@ -14,7 +14,7 @@ window.DUSTER_CONFIG = {
   FORM_MODE: "json",
 
   // Link revealed after a successful form submit (the Duster Dash APK / download page).
-  DOWNLOAD_URL: "",
+  DOWNLOAD_URL: "downloads/duster-dash-v1.0.9.apk",
 
   // Optional: second download button for the phone app (Duster Companion). Leave "" to hide it.
   COMPANION_DOWNLOAD_URL: "",
